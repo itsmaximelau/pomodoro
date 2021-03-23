@@ -10,13 +10,18 @@
 
 </head>
 
-<body>
+<body onload = "loadVariables()">
     <div>
         <h1> Pomodoro Timer </h1>
     </div>
 
     <div>
-        <h2 id="timer">25:00</h2>
+        <h2 id="timer"></h2>
+    </div>
+
+    <div>
+      <p id="pomodoroCount"></p>
+
     </div>
 
     <div id="buttons">
@@ -24,6 +29,7 @@
         <button onclick="disableTimer()" id="stop">Stop</button>
     </div>
 
-  <script src="main.js"></script>
+    <script src="main.js"></script>
+
 </body>
 </html>

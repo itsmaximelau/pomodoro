@@ -1,6 +1,13 @@
 body {
     background-color: #EBF2FA;
     font-family: 'Courier New', Courier, monospace;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+body, html{
+    width: 100%;
 }
 
 h1 {
@@ -11,13 +18,17 @@ h1 {
 p{
     color: #494949;
     font-family: 'Open Sans',sans-serif;
-    font-size : 17px;
+    font-size : 1.75vh;
     font-weight :700;
 }
 
+#pomodoroState-container{
+    width: 100%;
+    text-align: center;
+}
 
 #pomodoroCount{
-    font-size: 26px;
+    font-size: 3.75vh !important;
     margin-bottom: 100px;
     margin-top:0px;
 }
@@ -25,25 +36,22 @@ p{
 #timer {
     color: #427AA1;
     font-family: 'Exo', sans-serif;
-    font-size : 50px;
+    font-size : 8vh;
     margin-bottom: 17px;
     margin-top: 100px;
 }
 
 #title {
-    font-size : 50px;
-}
-
-#body {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    font-size : 4.5vh;
+    width: 100%;
 }
 
 .flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 392px;
+    min-height: 852px;
 }
 
 .button-start-pause {
@@ -56,8 +64,9 @@ p{
     display: inline-block;
     transition: all 0.4s ease 0s;
     font-family: 'Open Sans',sans-serif;
-    font-size : 17px;
+    font-size : 2vh;
     font-weight :700;
+    margin-right: 0.5vh;
 }
 
 .button-start-pause:hover {
@@ -66,7 +75,7 @@ p{
     border-color: #41ac64 !important;
     transition: all 0.4s ease 0s;
     font-family: 'Open Sans',sans-serif;
-    font-size : 17px;
+    font-size : 2vh;
     font-weight :700;
     }
 
@@ -80,8 +89,9 @@ p{
     display: inline-block;
     transition: all 0.4s ease 0s;
     font-family: 'Open Sans',sans-serif;
-    font-size : 17px;
+    font-size : 2vh;
     font-weight :700;
+    margin-left: 0.5vh;
 }
 
 .button-stop:hover {
@@ -90,6 +100,13 @@ p{
     border-color: #f63b3b !important;
     transition: all 0.4s ease 0s;
     font-family: 'Open Sans',sans-serif;
-    font-size : 17px;
+    font-size : 2vh;
     font-weight :700;
     }
+
+.button-flex-container{
+    margin-bottom: 10vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

@@ -1,10 +1,10 @@
 //Initial time values
-var initialWorkMinutes = 0;
-var initialWorkSeconds = 5;
-var initialPauseMinutes = 0;
-var initialPauseSeconds = 4;
-var initialLongPauseMinutes = 0;
-var initialLongPauseSeconds = 10;
+var initialWorkMinutes = 25;
+var initialWorkSeconds = 0;
+var initialPauseMinutes = 5;
+var initialPauseSeconds = 0;
+var initialLongPauseMinutes = 15;
+var initialLongPauseSeconds = 0;
 
 // Current time value
 var minutes = initialWorkMinutes;
@@ -39,7 +39,7 @@ function enableTimer(){
     if (timerRunning == true){
         timerRunning = false;
         clearInterval(timerInstance);
-        pomodoroState.innerHTML = "Timer paused";
+        pomodoroState.innerHTML = "TIMER PAUSED";
     }
     //START
     else {
@@ -55,7 +55,7 @@ function disableTimer(){
     clearInterval(timerInstance);
     resetTimer();
     resetPomodoroCount();
-    pomodoroState.innerHTML = "Waiting to start...";
+    pomodoroState.innerHTML = "WAITING TO START...";
 }
 
 //Function to reset timer value to initial values (hardcoded in variable section)
@@ -98,7 +98,7 @@ function timeOver(){
         //Long break
         if (pomodoroCount == maximumPomodoros-1){
             playSound();
-            console.log("Time for a long break.")
+            console.log("TIME FOR A LONG BREAK !")
             workState = false;
             setLongPauseTimer();
             updatePomodoroCount();
@@ -108,7 +108,7 @@ function timeOver(){
         //Short break
         else {
             playSound();
-            console.log("Time for a break.")
+            console.log("TIME FOR A BREAK !")
             workState = false;
             setPauseTimer();
             updatePomodoroCount();
@@ -121,12 +121,12 @@ function timeOver(){
         if (pomodoroCount == maximumPomodoros){
             playSound();
             disableTimer();
-            pomodoroState.innerHTML = "Waiting to start...";
+            pomodoroState.innerHTML = "WAITING TO START...";
         }
         //Work
         else{
             playSound();
-            console.log("Time to work.")
+            console.log("TIME TO WORK !")
             workState = true;
             setWorkTimer();
             workStateMessageCheckup();
@@ -142,13 +142,13 @@ function updatePomodoroCount(){
     else {
         pomodoroCount = 0;
     }
-    pomodoroString.innerHTML = "Count = " + pomodoroCount + "/" + maximumPomodoros;
+    pomodoroString.innerHTML = "COUNT " + pomodoroCount + "/" + maximumPomodoros;
 }
 
 //Function to easily reset PomodoroCount and display.
 function resetPomodoroCount(){
     pomodoroCount = 0;
-    pomodoroString.innerHTML = "Count = " + pomodoroCount + "/" + maximumPomodoros;
+    pomodoroString.innerHTML = "COUNT " + pomodoroCount + "/" + maximumPomodoros;
 }
 
 //Function to set time according to short pause timer settings.
@@ -172,8 +172,8 @@ function setWorkTimer(){
 //Function to load variables on page load.
 function loadVariables(){
     resetTimer();
-    pomodoroString.innerHTML = "Count = " + pomodoroCount + "/" + maximumPomodoros;
-    pomodoroState.innerHTML = "Waiting to start...";
+    pomodoroString.innerHTML = "COUNT " + pomodoroCount + "/" + maximumPomodoros;
+    pomodoroState.innerHTML = "WAITING TO START...";
 }
 
 //Function to play sound notification once timer ran out.
@@ -184,9 +184,9 @@ function playSound() {
 //Function to check current state and display it.
 function workStateMessageCheckup(){
     if (workState == true){
-        pomodoroState.innerHTML = "Time to work ;)";
+        pomodoroState.innerHTML = "TIME TO WORK !";
     }
     else if (workState == false){
-        pomodoroState.innerHTML = "Time to relax ! :D";
+        pomodoroState.innerHTML = "TIME TO RELAX !";
     }
 }

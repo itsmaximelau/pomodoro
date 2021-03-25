@@ -9,12 +9,18 @@
   <meta name="author" content="itsMaximeLau">
   <audio src= "https://raw.githubusercontent.com/itsMaximeLau/pomodoro/master/resources/alert.mp3"
   id="audio" controls style="display: none"> </audio>
+  <link rel="stylesheet" href="style.css">
+
+  <! -- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
 
 </head>
 
 <body onload = "loadVariables()">
+  <div class="flex-container">
     <div>
-        <h1> Pomodoro Timer </h1>
+        <h1 id="title"> Pomodoro Timer </h1>
     </div>
 
     <div>
@@ -29,11 +35,13 @@
       <p id="pomodoroState"></p>
     </div>
 
-    <div id="buttons">
-        <button onclick="enableTimer()" id="start-pause">Start/Pause</button>
-        <button onclick="disableTimer()" id="stop">Stop</button>
+    <div class="button-flex-container">
+      <a class="button-start-pause" onclick="enableTimer()"> Start/Pause </a>
+      <a class="button-stop" onclick="disableTimer()"> Stop </a></div>
     </div>
 
+
+  </div>
     <script src="main.js"></script>
 
 </body>
